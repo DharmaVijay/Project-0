@@ -1,5 +1,4 @@
 import sqlite3
-
 from model.user import User
 from dto.user_request import UserRequest
 from dto.user_response import UserResponse
@@ -9,9 +8,6 @@ import logging
 logging.basicConfig(filename="users.log", encoding='utf-8', filemode='a', level=logging.INFO)
 user_logger = logging.getLogger(__name__)
 
-class UserDAO:
-    con = sqlite3.connect("revhire.db", check_same_thread=False)
-    cursor = con.cursor()
 class UserDAO:
     con = sqlite3.connect("revhire.db", check_same_thread=False)
     cursor = con.cursor()

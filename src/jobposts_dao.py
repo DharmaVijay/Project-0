@@ -33,7 +33,7 @@ class JobPostsDAO:
                 (user_info["email"],)
             )
         isuser_permission = self.cursor.fetchone()
-        if isuser_permission[2] == "Employer" or isuser_permission :
+        if len(isuser_permission) == 0 or isuser_permission[4] == "Employer":
             logger_jobpostservice.info("User doesn't exist")
             raise Exception("Authentication failed")
         res = self.cursor.execute(

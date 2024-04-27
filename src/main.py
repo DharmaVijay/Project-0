@@ -1,5 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from prometheus_client import Counter, Histogram, Gauge, Summary
 from user_dao import UserDAO
 import logging
 import jwt
@@ -14,7 +13,6 @@ from dto.apply_jobrequest import ApplyJobRequest
 from dto.change_jobstatus import ChangeJobStatus
 import os
 from dotenv import load_dotenv
-# from dto.job_response import JobPosts 
 
 logging.basicConfig(filename="users.log", encoding='utf-8', filemode='a', level=logging.INFO)
 
